@@ -1,4 +1,51 @@
 # NOTE: you have to use single-quoted strings in TOML for regular expressions.
+
+[tool.poetry]
+name = "xtgeoviz"
+version = "0.0.0"
+description = "Various plotting from xtgeo"
+authors = ["Equinor TDI, Bergen"]
+license = "LGPL-3.0"
+readme = "README.md"
+repository = "https://github.com/equinor/xtgeoviz"
+classifiers = [
+    "License :: OSI Approved :: LGPL-v3 License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Lesser General Public ",
+    "License v3 or later (LGPLv3+)",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+]
+# documentation = "https://resqpy.readthedocs.io/en/latest/"
+# keywords = ["xtgeo,"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+xtgeo = "^2.20.7"
+PyYAML = "^6.0"
+scipy = "^1.10.0"
+matplotlib = "^3.6.3"
+numpy = "^1.23"
+
+[tool.poetry.group.dev.dependencies]
+setuptools-scm = "^7.1.0"
+pytest = "^7.2"
+
+[build-system]
+requires = ["poetry-core", "setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "poetry.core.masonry.api"
+
+# pyproject.toml
+[tool.setuptools_scm]
+write_to = "src/xtgeoviz/version.py"
+
 [tool.black]
 line-length = 88
 target-version = ['py36', 'py37', 'py38', 'py39']
@@ -20,6 +67,3 @@ exclude = '''
   | profiling
 )/
 '''
-
-[build-system]
-requires = ["pip>=19.1.1", "setuptools>=28", "setuptools_scm>=3.2.0", "wheel"]
